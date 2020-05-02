@@ -1,0 +1,44 @@
+<html>
+    <!DOCTYPE html>
+    <head>
+        <title>Image slider</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <button onclick="prev()">Prev</button>
+        <img id="slider" width="300px" height="300px" src="images/fb_img_9.jpg">
+        <button onclick="next()">Next</button>
+    </body>
+    <script>
+    var images = [
+    "images/fb_img_9.jpg",
+    "images/fb_img_10.jpg",
+    "images/fb_img_11.jpg",
+    "images/fb_img_12.jpg",
+    "images/fb_img_13.jpg",
+    "images/fb_img_14.jpg",
+    "images/fb_img_15.jpg",
+    "images/fb_img_16.jpg",
+    "images/fb_img_17.jpg",
+    "images/fb_img_18.jpg",
+    "images/fb_img_19.jpg"];
+
+        var slider = document.getElementById("slider");
+        var num = 0;
+        function next() {
+            num++;
+            if(num >= images.length) {
+                num = 0;
+            }
+            slider.src = images[num];
+        }
+
+        function prev() {
+            num--;
+            if(num < 0) {
+                num = images.length - 1;
+            }
+            slider.src = images[num];
+        }
+    </script>
+</html>
